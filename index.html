@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Mind Reader - AI-Powered Study Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">🧠</div>
+            <div class="loading-text">Exam Mind Reader</div>
+            <div class="loading-spinner"></div>
+            <div class="loading-subtitle">Initializing AI Mind Reader...</div>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <div class="theme-toggle-content">
+            <span class="theme-icon" id="themeIcon">🌙</span>
+        </div>
+    </div>
+
+    <div class="container" id="mainContainer">
+        <!-- Main Header -->
+        <header class="header">
+            <div class="logo">🧠</div>
+            <h1 class="main-title">Exam Mind Reader</h1>
+            <p class="subtitle">AI-powered study assistant that understands your exam fears</p>
+        </header>
+
+        <!-- Form Section -->
+        <section class="form-section" id="formSection">
+            <div class="form-card">
+                <h2 class="form-title">Tell me about your exam</h2>
+                <form id="examForm" class="exam-form">
+                    <div class="form-group">
+                        <label for="nextExam" class="form-label">What is your next exam?</label>
+                        <div class="input-card">
+                            <input type="text" id="nextExam" name="nextExam" class="form-input" 
+                                   placeholder="e.g., It's maths, chemistry or biology idk..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hardestPart" class="form-label">What's the hardest part about it?</label>
+                        <div class="input-card">
+                            <textarea id="hardestPart" name="hardestPart" class="form-textarea" 
+                                      placeholder="Tell me what's really stressing you out..." rows="3" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preparation" class="form-label">What have you done to prepare?</label>
+                        <div class="input-card">
+                            <textarea id="preparation" name="preparation" class="form-textarea" 
+                                      placeholder="Maybe nothing lol, or studied for 10 years 😭..." rows="3" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="button-card">
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-icon">🔮</span>
+                            <span class="btn-text">Read My Mind</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="resultsSection" style="display: none;">
+            <div class="result-card prediction-card">
+                <div class="card-header">
+                    <h2 class="card-title">🎯 AI Analysis Complete</h2>
+                </div>
+                <div class="card-content">
+                    <p class="prediction-text" id="predictionText"></p>
+                    <div class="confidence-meter">
+                        <div class="confidence-bar" id="confidenceBar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card tips-card">
+                <div class="card-header">
+                    <h3 class="card-title">💡 Simple Study Tips</h3>
+                </div>
+                <div class="card-content">
+                    <ul id="tipsList" class="tips-list"></ul>
+                </div>
+            </div>
+
+            <div class="button-card">
+                <button class="refresh-btn" id="refreshBtn">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-text">Try Again</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage" style="display: none;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
